@@ -1,0 +1,138 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&family=Montserrat&family=Poppins&family=Share+Tech+Mono&display=swap");
+
+// Variables
+$background: #282c37;
+$accent: #fffafe;
+$main: #00a85a;
+
+body {
+	height: 100vh;
+	width: 100vw;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "poppins";
+	background-color: #282c37;
+}
+
+.container-dada {
+	height: 100vh;
+	display: grid;
+	place-items: center;
+	.calculator-body {
+		// height: 30rem;
+		width: 25rem;
+		border: 0.1rem solid $main;
+		border-radius: 1em;
+		background-color: #1b1e26;
+
+		#output {
+			margin-block-start: 1em;
+			margin-inline-start: 1em;
+			display: flex;
+			gap: 01rem;
+			input {
+				width: 80%;
+				height: 2rem;
+				overflow-x: auto;
+				font-family: "Share Tech Mono";
+				text-align: right;
+				// &:after {
+				// 	content: "* * *";
+				// }
+			}
+			p {
+				margin-block-start: 0.005em;
+				height: 0.1rem;
+				font-size: 1.8rem;
+			}
+		}
+		#keys {
+			margin-block-start: 2em;
+			margin-block-end: 1em;
+			display: grid;
+			grid-template-columns: repeat(4, 5.5rem);
+			gap: 1em;
+			place-items: center;
+			grid-template-areas:
+				"parenthesisOpen parenthesisClose clear percentage"
+				"seven eight nine times"
+				"four five six minus"
+				"one two three plus"
+				"zero decimal equal divide";
+			button {
+				background-color: $background;
+				height: 4rem;
+				width: 1rem;
+				padding: 1rem;
+				font-size: 2rem;
+				padding: 0.5em;
+				width: max-content;
+				font-family: "Courier Prime";
+				text-align: center;
+				border-radius: 0.5em;
+			}
+			#key1 {
+				grid-area: one;
+			}
+			#key2 {
+				grid-area: two;
+			}
+			#key3 {
+				grid-area: three;
+			}
+			#key4 {
+				grid-area: four;
+			}
+			#key5 {
+				grid-area: five;
+			}
+			#key6 {
+				grid-area: six;
+			}
+			#key7 {
+				grid-area: seven;
+			}
+			#key8 {
+				grid-area: eight;
+			}
+			#key9 {
+				grid-area: nine;
+			}
+			#key0 {
+				grid-area: zero;
+			}
+			#decimal {
+				grid-area: decimal;
+			}
+			#clear {
+				grid-area: clear;
+			}
+			#parenthesisOpen {
+				grid-area: parenthesisOpen;
+			}
+			#parenthesisClose {
+				grid-area: parenthesisClose;
+			}
+			#times {
+				grid-area: times;
+			}
+			#divide {
+				grid-area: divide;
+			}
+			#minus {
+				grid-area: minus;
+			}
+			#plus {
+				grid-area: plus;
+			}
+			#equal {
+				grid-area: equal;
+			}
+			#percentage {
+				grid-area: percentage;
+			}
+		}
+	}
+}
