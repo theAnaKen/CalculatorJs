@@ -34,12 +34,14 @@ body {
   overflow-x: auto;
   font-family: "Share Tech Mono";
   text-align: right;
+  font-size: 1.5rem;
 }
 .container-dada .calculator-body #output p {
   -webkit-margin-before: 0.005em;
           margin-block-start: 0.005em;
   height: 0.1rem;
   font-size: 1.8rem;
+  cursor: pointer;
 }
 .container-dada .calculator-body #keys {
   -webkit-margin-before: 2em;
@@ -53,6 +55,7 @@ body {
   grid-template-areas: "parenthesisOpen parenthesisClose clear percentage" "seven eight nine times" "four five six minus" "one two three plus" "zero decimal equal divide";
 }
 .container-dada .calculator-body #keys button {
+  cursor: pointer;
   background-color: #282c37;
   height: 4rem;
   width: 1rem;

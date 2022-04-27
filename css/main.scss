@@ -38,6 +38,7 @@ body {
 				overflow-x: auto;
 				font-family: "Share Tech Mono";
 				text-align: right;
+				font-size: 1.5rem;
 				// &:after {
 				// 	content: "* * *";
 				// }
@@ -46,6 +47,7 @@ body {
 				margin-block-start: 0.005em;
 				height: 0.1rem;
 				font-size: 1.8rem;
+				cursor: pointer;
 			}
 		}
 		#keys {
@@ -62,6 +64,7 @@ body {
 				"one two three plus"
 				"zero decimal equal divide";
 			button {
+				cursor: pointer;
 				background-color: $background;
 				height: 4rem;
 				width: 1rem;

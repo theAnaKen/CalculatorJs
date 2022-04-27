@@ -1,0 +1,7 @@
+.prettierrc
+node_modules/
+env.js
+.sass-cache/
+css/*.css.map
+*.sass.map
+*.scss.map
