@@ -51,9 +51,12 @@ calculatorOperator.forEach((key) => {
 	});
 });
 
+// Backspace button functionality
 backspace.addEventListener("click", (e) => {
 	outputInput.value.length = outputInput.value.length - 1;
-	console.dir(outputInput.value.length - 1);
-	console.dir(outputInput.value.length--);
-	console.log("click");
+	let erasedResult = outputInput.value.substring(
+		0,
+		outputInput.value.length - 1,
+	);
+	outputInput.value = erasedResult;
 });
