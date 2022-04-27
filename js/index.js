@@ -28,6 +28,12 @@ calculatorOperator.forEach((key) => {
 		if (keyValue === "=") {
 			// Eval Error handeling
 			try {
+				// making the result "0" if input is empty
+				if (eval(outputInput.value) === undefined) {
+					outputInput.value = 0;
+					return;
+				}
+
 				outputInput.value = eval(outputInput.value);
 			} catch (error) {
 				outputInput.value = "SYNTAX ERROR";
