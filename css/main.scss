@@ -20,6 +20,13 @@ body {
 	height: 100vh;
 	display: grid;
 	place-items: center;
+
+	h1 {
+		text-decoration: underline;
+		position: absolute;
+		top: 0;
+	}
+
 	.calculator-body {
 		// height: 30rem;
 		width: 25rem;
