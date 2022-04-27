@@ -24,21 +24,21 @@ calculatorKeys.forEach((key) => {
 // putting the pressed operator in output Value input
 calculatorOperator.forEach((key) => {
 	key.addEventListener("click", (e) => {
-		// console.log(outputVariable);
-
 		const keyValue = e.target.innerText;
 		if (keyValue === "=") {
-			outputInput.value = eval(outputInput.value);
-			// console.log(outputVariable);
+			// Eval Error handeling
+			try {
+				outputInput.value = eval(outputInput.value);
+			} catch (error) {
+				outputInput.value = "SYNTAX ERROR";
+			}
 
 			return;
 		} else if (keyValue === "C") {
 			outputInput.value = "";
-
 			return;
 		} else if (keyValue === "÷") {
 			outputInput.value += "/";
-
 			return;
 		} else if (keyValue === "×") {
 			outputInput.value += "*";
