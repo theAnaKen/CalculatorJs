@@ -42,7 +42,9 @@ calculatorOperator.forEach((key) => {
 			return;
 		} else if (keyValue === "×") {
 			outputInput.value += "*";
-
+			return;
+		} else if (keyValue === "%") {
+			outputInput.value += "/100";
 			return;
 		} else {
 			outputInput.value += keyValue;
