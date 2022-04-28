@@ -1,4 +1,6 @@
 // Getting DOM Elements
+const key0 = document.getElementById("key0");
+
 const outputDiv = document.getElementById("output");
 const outputInput = outputDiv.querySelector("input");
 const backspace = outputDiv.querySelector("p").querySelector("i");
@@ -12,13 +14,19 @@ let outputVariable = "";
 
 // putting the pressed key in output Value input
 calculatorKeys.forEach((key) => {
+	const keyValue = key.innerText;
+
+	key0.style.pointerEvents = "none";
 	key.addEventListener("click", (e) => {
-		const keyValue = e.target.innerText;
+		if (outputInput.value === "0") {
+			outputInput.value = keyValue;
+			return;
+		}
+
 		outputInput.value += keyValue;
-		// outputVariable = outputInput.value;
-		// console.log(outputVariable);
+		key0.style.pointerEvents = "all";
+		console.log(outputInput.value);
 	});
-	// console.log(key);
 });
 
 // putting the pressed operator in output Value input
@@ -38,10 +46,13 @@ calculatorOperator.forEach((key) => {
 			} catch (error) {
 				outputInput.value = "SYNTAX ERROR";
 			}
+			console.log(outputInput.value);
 
 			return;
 		} else if (keyValue === "C") {
 			outputInput.value = "";
+			key0.style.pointerEvents = "none";
+
 			return;
 		} else if (keyValue === "÷") {
 			outputInput.value += "/";
