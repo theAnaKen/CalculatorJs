@@ -1,9 +1,10 @@
 // Getting DOM Elements
+const allKeys = document.querySelectorAll("button");
 const key0 = document.getElementById("key0");
 
 const outputDiv = document.getElementById("output");
 const outputInput = outputDiv.querySelector("input");
-const backspace = outputDiv.querySelector("p").querySelector("i");
+const backspace = outputDiv.querySelector("button").querySelector("i");
 
 const keysDiv = document.getElementById("keys");
 const calculatorKeys = keysDiv.querySelectorAll(".key");
@@ -12,11 +13,20 @@ const calculatorOperator = keysDiv.querySelectorAll(".operator");
 // making a output keys variable
 let outputVariable = "";
 
+// putting event listeners on all keys
+allKeys.forEach((key) => {
+	key.addEventListener("click", (e) => {
+		if (outputInput.value === "0" || outputInput.value === "") {
+			key0.style.pointerEvents = "none";
+		}
+	});
+});
+
 // putting the pressed key in output Value input
 calculatorKeys.forEach((key) => {
 	const keyValue = key.innerText;
-
 	key0.style.pointerEvents = "none";
+
 	key.addEventListener("click", (e) => {
 		if (outputInput.value === "0") {
 			outputInput.value = keyValue;
@@ -25,7 +35,6 @@ calculatorKeys.forEach((key) => {
 
 		outputInput.value += keyValue;
 		key0.style.pointerEvents = "all";
-		console.log(outputInput.value);
 	});
 });
 
@@ -46,7 +55,6 @@ calculatorOperator.forEach((key) => {
 			} catch (error) {
 				outputInput.value = "SYNTAX ERROR";
 			}
-			console.log(outputInput.value);
 
 			return;
 		} else if (keyValue === "C") {

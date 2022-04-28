@@ -41,7 +41,11 @@ body {
   text-align: right;
   font-size: 1.5rem;
 }
-.container-dada .calculator-body #output p {
+.container-dada .calculator-body #output button {
+  background-color: transparent;
+  border: none;
+}
+.container-dada .calculator-body #output button i {
   -webkit-margin-before: 0.005em;
           margin-block-start: 0.005em;
   height: 0.1rem;

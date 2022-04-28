@@ -50,11 +50,15 @@ body {
 				// 	content: "* * *";
 				// }
 			}
-			p {
-				margin-block-start: 0.005em;
-				height: 0.1rem;
-				font-size: 1.8rem;
-				cursor: pointer;
+			button {
+				background-color: transparent;
+				border: none;
+				i {
+					margin-block-start: 0.005em;
+					height: 0.1rem;
+					font-size: 1.8rem;
+					cursor: pointer;
+				}
 			}
 		}
 		#keys {
