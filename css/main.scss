@@ -39,7 +39,7 @@ body {
 			margin-inline-start: 1em;
 			display: flex;
 			gap: 01rem;
-			input {
+			input[disabled] {
 				width: 80%;
 				height: 2rem;
 				overflow-x: auto;

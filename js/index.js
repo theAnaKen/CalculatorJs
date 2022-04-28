@@ -30,11 +30,16 @@ calculatorKeys.forEach((key) => {
 	key.addEventListener("click", (e) => {
 		if (outputInput.value === "0") {
 			outputInput.value = keyValue;
+			outputVariable = keyValue;
+			console.log(outputVariable);
+
 			return;
 		}
 
 		outputInput.value += keyValue;
+		outputVariable += keyValue;
 		key0.style.pointerEvents = "all";
+		console.log(outputVariable);
 	});
 });
 
@@ -46,33 +51,45 @@ calculatorOperator.forEach((key) => {
 			// Eval Error handeling
 			try {
 				// making the result "0" if input is empty
-				if (eval(outputInput.value) === undefined) {
+				if (eval(outputVariable) === undefined) {
 					outputInput.value = 0;
+					outputVariable = 0;
 					return;
 				}
 
-				outputInput.value = eval(outputInput.value);
+				outputInput.value = eval(outputVariable);
+				outputVariable = eval(outputVariable);
 			} catch (error) {
 				outputInput.value = "SYNTAX ERROR";
+				outputVariable = "ERROR";
 			}
 
 			return;
 		} else if (keyValue === "C") {
 			outputInput.value = "";
+			outputVariable = "";
 			key0.style.pointerEvents = "none";
+			console.log(outputVariable);
 
 			return;
 		} else if (keyValue === "÷") {
-			outputInput.value += "/";
+			outputInput.value += "÷";
+			outputVariable += "/";
+			console.log(outputVariable);
 			return;
 		} else if (keyValue === "×") {
-			outputInput.value += "*";
+			outputInput.value += "×";
+			outputVariable += "*";
 			return;
 		} else if (keyValue === "%") {
-			outputInput.value += "/100";
+			outputInput.value += "%";
+			outputVariable += "/100";
+			console.log(outputVariable);
+
 			return;
 		} else {
 			outputInput.value += keyValue;
+			outputVariable += keyValue;
 		}
 		console.log(keyValue);
 	});
@@ -85,5 +102,7 @@ backspace.addEventListener("click", (e) => {
 		0,
 		outputInput.value.length - 1,
 	);
+	let erasedValue = outputVariable.substring(0, outputVariable.length - 2);
 	outputInput.value = erasedResult;
+	outputVariable = erasedValue;
 });

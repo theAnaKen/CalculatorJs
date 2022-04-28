@@ -33,7 +33,7 @@ body {
   display: flex;
   gap: 1rem;
 }
-.container-dada .calculator-body #output input {
+.container-dada .calculator-body #output input[disabled] {
   width: 80%;
   height: 2rem;
   overflow-x: auto;
