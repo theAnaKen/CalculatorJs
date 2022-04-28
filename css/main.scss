@@ -46,9 +46,6 @@ body {
 				font-family: "Share Tech Mono";
 				text-align: right;
 				font-size: 1.5rem;
-				// &:after {
-				// 	content: "* * *";
-				// }
 			}
 			button {
 				background-color: transparent;
@@ -152,4 +149,19 @@ body {
 }
 
 @media (prefers-color-scheme: light) {
+	body {
+		background-color: #282c37;
+		color: #eee;
+	}
+	input {
+		color: #eee;
+		background-color: #3b3b3b;
+	}
+	.calculator-body {
+		background-color: #1b1e26;
+
+		button {
+			color: #eee;
+		}
+	}
 }

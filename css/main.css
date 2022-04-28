@@ -137,4 +137,23 @@ body {
 }
 .container-dada .calculator-body #keys #percentage {
   grid-area: percentage;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #282c37;
+    color: #eee;
+  }
+
+  input {
+    color: #eee;
+    background-color: #3b3b3b;
+  }
+
+  .calculator-body {
+    background-color: #1b1e26;
+  }
+  .calculator-body button {
+    color: #eee;
+  }
 }/*# sourceMappingURL=main.css.map */
