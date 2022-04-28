@@ -32,7 +32,6 @@ calculatorKeys.forEach((key) => {
 			outputInput.value = keyValue;
 			outputVariable = keyValue;
 			console.log(outputVariable);
-
 			return;
 		}
 
@@ -83,7 +82,7 @@ calculatorOperator.forEach((key) => {
 			return;
 		} else if (keyValue === "%") {
 			outputInput.value += "%";
-			outputVariable += "/100";
+			outputVariable += "/100*";
 			console.log(outputVariable);
 
 			return;
@@ -102,7 +101,10 @@ backspace.addEventListener("click", (e) => {
 		0,
 		outputInput.value.length - 1,
 	);
-	let erasedValue = outputVariable.substring(0, outputVariable.length - 2);
+	console.log(outputVariable);
+	outputVariable = JSON.stringify(outputVariable);
+	let erasedValue = outputVariable.substring(0, outputVariable.length - 1);
 	outputInput.value = erasedResult;
 	outputVariable = erasedValue;
+	console.log(erasedResult, erasedValue);
 });
