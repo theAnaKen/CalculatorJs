@@ -2,6 +2,7 @@
 const allKeys = document.querySelectorAll("button");
 const key0 = document.getElementById("key0");
 const decimal = document.getElementById("decimal");
+const multiplyOperator = document.getElementById("times");
 
 const outputDiv = document.getElementById("output");
 const outputInput = outputDiv.querySelector("input");
@@ -35,14 +36,12 @@ calculatorKeys.forEach((key) => {
 		if (outputInput.value === "0") {
 			outputInput.value = keyValue;
 			outputVariable = keyValue;
-			console.log(outputVariable);
 			return;
 		}
 
 		outputInput.value += keyValue;
 		outputVariable += keyValue;
 		key0.style.pointerEvents = "all";
-		console.log(outputVariable);
 	});
 });
 
@@ -75,28 +74,25 @@ calculatorOperator.forEach((key) => {
 			outputInput.value = "";
 			outputVariable = "";
 			key0.style.pointerEvents = "none";
-			console.log(outputVariable);
 			return;
 		} else if (keyValue === "÷") {
 			outputInput.value += "÷";
 			outputVariable += "/";
-			console.log(outputVariable);
 			return;
 		} else if (keyValue === "×") {
 			outputInput.value += "×";
 			outputVariable += "*";
 			return;
 		} else if (keyValue === "%") {
-			outputInput.value += "%";
+			outputInput.value += "%×";
+
 			outputVariable += "/100*";
-			console.log(outputVariable);
 
 			return;
 		} else {
 			outputInput.value += keyValue;
 			outputVariable += keyValue;
 		}
-		console.log(keyValue);
 	});
 });
 
@@ -107,12 +103,10 @@ backspace.addEventListener("click", (e) => {
 		0,
 		outputInput.value.length - 1,
 	);
-	console.log(outputVariable);
 	outputVariable = JSON.stringify(outputVariable);
 	let erasedValue = outputVariable.substring(0, outputVariable.length - 1);
 	outputInput.value = erasedResult;
 	outputVariable = erasedValue;
-	console.log(erasedResult, erasedValue);
 });
 
 // disabling the decimal key after one press
