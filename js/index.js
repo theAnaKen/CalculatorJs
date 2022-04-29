@@ -51,7 +51,10 @@ calculatorOperator.forEach((key) => {
 		const keyValue = e.target.innerText;
 
 		// enabling decimal key for a singele press after an operator is used
-		decimal.style.pointerEvents = "all";
+		if (keyValue !== "=") {
+			decimal.style.pointerEvents = "all";
+		}
+
 		if (keyValue === "=") {
 			// Eval Error handeling
 			try {
