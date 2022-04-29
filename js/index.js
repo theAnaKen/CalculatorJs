@@ -1,6 +1,7 @@
 // Getting DOM Elements
 const allKeys = document.querySelectorAll("button");
 const key0 = document.getElementById("key0");
+const decimal = document.getElementById("decimal");
 
 const outputDiv = document.getElementById("output");
 const outputInput = outputDiv.querySelector("input");
@@ -18,6 +19,9 @@ allKeys.forEach((key) => {
 	key.addEventListener("click", (e) => {
 		if (outputInput.value === "0" || outputInput.value === "") {
 			key0.style.pointerEvents = "none";
+
+			// enabling decimal key for a singele press after an backspace is pressed
+			decimal.style.pointerEvents = "all";
 		}
 	});
 });
@@ -46,6 +50,9 @@ calculatorKeys.forEach((key) => {
 calculatorOperator.forEach((key) => {
 	key.addEventListener("click", (e) => {
 		const keyValue = e.target.innerText;
+
+		// enabling decimal key for a singele press after an operator is used
+		decimal.style.pointerEvents = "all";
 		if (keyValue === "=") {
 			// Eval Error handeling
 			try {
@@ -69,7 +76,6 @@ calculatorOperator.forEach((key) => {
 			outputVariable = "";
 			key0.style.pointerEvents = "none";
 			console.log(outputVariable);
-
 			return;
 		} else if (keyValue === "÷") {
 			outputInput.value += "÷";
@@ -107,4 +113,9 @@ backspace.addEventListener("click", (e) => {
 	outputInput.value = erasedResult;
 	outputVariable = erasedValue;
 	console.log(erasedResult, erasedValue);
+});
+
+// disabling the decimal key after one press
+decimal.addEventListener("click", (e) => {
+	e.target.style.pointerEvents = "none";
 });
