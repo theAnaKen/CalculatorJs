@@ -58,6 +58,8 @@ calculatorOperator.forEach((key) => {
 		if (keyValue === "=") {
 			// Eval Error handeling
 			try {
+				outputInput.value = "...";
+
 				// making the result "0" if input is empty
 				if (eval(outputVariable) === undefined) {
 					outputInput.value = 0;
@@ -65,8 +67,11 @@ calculatorOperator.forEach((key) => {
 					return;
 				}
 
-				outputInput.value = eval(outputVariable);
 				outputVariable = eval(outputVariable);
+
+				setTimeout(() => {
+					outputInput.value = outputVariable;
+				}, 500);
 			} catch (error) {
 				outputInput.value = "SYNTAX ERROR";
 				outputVariable = "ERROR";
