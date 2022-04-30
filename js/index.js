@@ -71,7 +71,7 @@ calculatorOperator.forEach((key) => {
 
 				setTimeout(() => {
 					outputInput.value = outputVariable;
-				}, 500);
+				}, 150);
 			} catch (error) {
 				outputInput.value = "SYNTAX ERROR";
 				outputVariable = "ERROR";
