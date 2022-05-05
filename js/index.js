@@ -106,12 +106,11 @@ calculatorOperator.forEach((key) => {
 
 // Backspace button functionality
 backspace.addEventListener("click", (e) => {
-	outputInput.value.length = outputInput.value.length - 1;
 	let erasedResult = outputInput.value.substring(
 		0,
 		outputInput.value.length - 1,
 	);
-	outputVariable = JSON.stringify(outputVariable);
+	console.log(outputVariable);
 	let erasedValue = outputVariable.substring(0, outputVariable.length - 1);
 	outputInput.value = erasedResult;
 	outputVariable = erasedValue;
