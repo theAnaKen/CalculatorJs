@@ -110,7 +110,6 @@ backspace.addEventListener("click", (e) => {
 		0,
 		outputInput.value.length - 1,
 	);
-	console.log(outputVariable);
 	let erasedValue = outputVariable.substring(0, outputVariable.length - 1);
 	outputInput.value = erasedResult;
 	outputVariable = erasedValue;
