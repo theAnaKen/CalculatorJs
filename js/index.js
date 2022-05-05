@@ -70,6 +70,15 @@ calculatorOperator.forEach((key) => {
 				outputVariable = eval(outputVariable);
 
 				setTimeout(() => {
+					// limits decimal digits to 12
+					if (outputInput.value.includes(".")) {
+						outputVariable = outputVariable.toLocaleString(
+							"fullwide",
+							{
+								maximumFractionDigits: 12,
+							},
+						);
+					}
 					outputInput.value = outputVariable;
 				}, 150);
 			} catch (error) {
