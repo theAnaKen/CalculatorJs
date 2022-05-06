@@ -97,25 +97,28 @@ calculatorOperator.forEach((key) => {
 			outputInput.value = "";
 			outputVariable = "";
 			key0.style.pointerEvents = "none";
+
 			return;
 		} else if (keyValue === "÷") {
 			outputInput.value += "÷";
 			outputVariable += "/";
+
 			return;
 		} else if (keyValue === "×") {
 			outputInput.value += "×";
 			outputVariable += "*";
+
 			return;
 		} else if (keyValue === "%") {
-			outputInput.value += "%×";
+			outputInput.value += "%";
+			outputVariable += "/100";
 
-			outputVariable += "/100*";
-
+			multiplyOperator.click();
 			return;
-		} else {
-			outputInput.value += keyValue;
-			outputVariable += keyValue;
 		}
+
+		outputInput.value += keyValue;
+		outputVariable += keyValue;
 	});
 });
 
@@ -134,4 +137,3 @@ backspace.addEventListener("click", (e) => {
 decimal.addEventListener("click", (e) => {
 	e.target.style.pointerEvents = "none";
 });
-// utility Functions
