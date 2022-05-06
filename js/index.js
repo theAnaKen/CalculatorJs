@@ -1,3 +1,5 @@
+import removeComma from "./RemoveComma.js";
+
 // Getting DOM Elements
 const allKeys = document.querySelectorAll("button");
 const key0 = document.getElementById("key0");
@@ -72,12 +74,16 @@ calculatorOperator.forEach((key) => {
 				setTimeout(() => {
 					// limits decimal digits to 12
 					if (outputInput.value.includes(".")) {
+						let regx = /,/g;
+
 						outputVariable = outputVariable.toLocaleString(
 							"fullwide",
 							{
 								maximumFractionDigits: 12,
 							},
 						);
+
+						outputVariable = removeComma(outputVariable);
 					}
 					outputInput.value = outputVariable;
 				}, 150);
@@ -128,3 +134,4 @@ backspace.addEventListener("click", (e) => {
 decimal.addEventListener("click", (e) => {
 	e.target.style.pointerEvents = "none";
 });
+// utility Functions
