@@ -1,7 +1,8 @@
-export default function removeComma(str) {
+const removeComma = (str) => {
 	if (str.includes(",")) {
 		return (str = str.replace(/,/g, ""));
-	} else {
-		return str;
 	}
-}
+	return str;
+};
+
+export default removeComma;
