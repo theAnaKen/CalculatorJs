@@ -1,3 +1,4 @@
+import DecimalRoundOff from "./DecimalRoundOff.js";
 import removeComma from "./RemoveComma.js";
 
 // Getting DOM Elements
@@ -74,19 +75,12 @@ calculatorOperator.forEach((key) => {
 				setTimeout(() => {
 					// limits decimal digits to 12
 					if (outputInput.value.includes(".")) {
-						let regx = /,/g;
-
-						outputVariable = outputVariable.toLocaleString(
-							"fullwide",
-							{
-								maximumFractionDigits: 12,
-							},
-						);
+						outputVariable = DecimalRoundOff(outputVariable, 10);
 
 						outputVariable = removeComma(outputVariable);
 					}
 					outputInput.value = outputVariable;
-				}, 150);
+				}, 50);
 			} catch (error) {
 				outputInput.value = "SYNTAX ERROR";
 				outputVariable = "ERROR";
