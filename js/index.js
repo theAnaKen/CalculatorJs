@@ -36,7 +36,7 @@ calculatorKeys.forEach((key) => {
 	key0.style.pointerEvents = "none";
 
 	key.addEventListener("click", (e) => {
-		if (outputInput.value === "0") {
+		if (outputInput.value === "0" || outputInput.value === "SYNTAX ERROR") {
 			outputInput.value = keyValue;
 			outputVariable = keyValue;
 			return;
