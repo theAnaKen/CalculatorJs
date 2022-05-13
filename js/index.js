@@ -75,16 +75,7 @@ calculatorOperator.forEach((key) => {
 				setTimeout(() => {
 					// limits decimal digits to 12
 					if (outputInput.value.includes(".")) {
-<<<<<<< HEAD
-						outputVariable = outputVariable.toLocaleString(
-							"fullwide",
-							{
-								maximumFractionDigits: 12,
-							},
-						);
-=======
 						outputVariable = DecimalRoundOff(outputVariable, 10);
->>>>>>> utility-functions
 
 						outputVariable = removeComma(outputVariable);
 					}
