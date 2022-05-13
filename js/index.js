@@ -74,8 +74,6 @@ calculatorOperator.forEach((key) => {
 				setTimeout(() => {
 					// limits decimal digits to 12
 					if (outputInput.value.includes(".")) {
-						let regx = /,/g;
-
 						outputVariable = outputVariable.toLocaleString(
 							"fullwide",
 							{
@@ -93,23 +91,27 @@ calculatorOperator.forEach((key) => {
 			}
 
 			return;
-		} else if (keyValue === "C") {
+		}
+		if (keyValue === "C") {
 			outputInput.value = "";
 			outputVariable = "";
 			key0.style.pointerEvents = "none";
 
 			return;
-		} else if (keyValue === "÷") {
+		}
+		if (keyValue === "÷") {
 			outputInput.value += "÷";
 			outputVariable += "/";
 
 			return;
-		} else if (keyValue === "×") {
+		}
+		if (keyValue === "×") {
 			outputInput.value += "×";
 			outputVariable += "*";
 
 			return;
-		} else if (keyValue === "%") {
+		}
+		if (keyValue === "%") {
 			outputInput.value += "%";
 			outputVariable += "/100";
 
