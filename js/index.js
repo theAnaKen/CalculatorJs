@@ -98,13 +98,11 @@ calculatorOperator.forEach((key) => {
 		if (keyValue === "÷") {
 			outputInput.value += "÷";
 			outputVariable += "/";
-
 			return;
 		}
 		if (keyValue === "×") {
 			outputInput.value += "×";
 			outputVariable += "*";
-
 			return;
 		}
 		if (keyValue === "%") {
@@ -114,7 +112,6 @@ calculatorOperator.forEach((key) => {
 			multiplyOperator.click();
 			return;
 		}
-
 		outputInput.value += keyValue;
 		outputVariable += keyValue;
 	});
