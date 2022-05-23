@@ -9,6 +9,86 @@ body {
   background-color: #282c37;
 }
 
+#key0 {
+  grid-area: zero;
+}
+
+#key1 {
+  grid-area: one;
+}
+
+#key2 {
+  grid-area: two;
+}
+
+#key3 {
+  grid-area: three;
+}
+
+#key4 {
+  grid-area: four;
+}
+
+#key5 {
+  grid-area: five;
+}
+
+#key6 {
+  grid-area: six;
+}
+
+#key7 {
+  grid-area: seven;
+}
+
+#key8 {
+  grid-area: eight;
+}
+
+#key9 {
+  grid-area: nine;
+}
+
+#clear {
+  grid-area: clear;
+}
+
+#parenthesisOpen {
+  grid-area: parenthesisOpen;
+}
+
+#parenthesisClose {
+  grid-area: parenthesisClose;
+}
+
+#times {
+  grid-area: times;
+}
+
+#divide {
+  grid-area: divide;
+}
+
+#minus {
+  grid-area: minus;
+}
+
+#plus {
+  grid-area: plus;
+}
+
+#equal {
+  grid-area: equal;
+}
+
+#percentage {
+  grid-area: percentage;
+}
+
+#decimal {
+  grid-area: decimal;
+}
+
 .container-dada {
   height: 100vh;
   display: grid;
@@ -77,66 +157,6 @@ body {
   font-family: "Courier Prime";
   text-align: center;
   border-radius: 0.5em;
-}
-.container-dada .calculator-body #keys #key1 {
-  grid-area: one;
-}
-.container-dada .calculator-body #keys #key2 {
-  grid-area: two;
-}
-.container-dada .calculator-body #keys #key3 {
-  grid-area: three;
-}
-.container-dada .calculator-body #keys #key4 {
-  grid-area: four;
-}
-.container-dada .calculator-body #keys #key5 {
-  grid-area: five;
-}
-.container-dada .calculator-body #keys #key6 {
-  grid-area: six;
-}
-.container-dada .calculator-body #keys #key7 {
-  grid-area: seven;
-}
-.container-dada .calculator-body #keys #key8 {
-  grid-area: eight;
-}
-.container-dada .calculator-body #keys #key9 {
-  grid-area: nine;
-}
-.container-dada .calculator-body #keys #key0 {
-  grid-area: zero;
-}
-.container-dada .calculator-body #keys #decimal {
-  grid-area: decimal;
-}
-.container-dada .calculator-body #keys #clear {
-  grid-area: clear;
-}
-.container-dada .calculator-body #keys #parenthesisOpen {
-  grid-area: parenthesisOpen;
-}
-.container-dada .calculator-body #keys #parenthesisClose {
-  grid-area: parenthesisClose;
-}
-.container-dada .calculator-body #keys #times {
-  grid-area: times;
-}
-.container-dada .calculator-body #keys #divide {
-  grid-area: divide;
-}
-.container-dada .calculator-body #keys #minus {
-  grid-area: minus;
-}
-.container-dada .calculator-body #keys #plus {
-  grid-area: plus;
-}
-.container-dada .calculator-body #keys #equal {
-  grid-area: equal;
-}
-.container-dada .calculator-body #keys #percentage {
-  grid-area: percentage;
 }
 
 @media (prefers-color-scheme: light) {

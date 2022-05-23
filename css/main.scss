@@ -16,6 +16,43 @@ body {
 	background-color: #282c37;
 }
 
+$keys-area-grid: (
+	zero: 0,
+	one: 1,
+	two: 2,
+	three: 3,
+	four: 4,
+	five: 5,
+	six: 6,
+	seven: 7,
+	eight: 8,
+	nine: 9,
+);
+
+$operators-grid-area: (
+	clear: clear,
+	parenthesisOpen: parenthesisOpen,
+	parenthesisClose: parenthesisClose,
+	times: times,
+	divide: divide,
+	minus: minus,
+	plus: plus,
+	equal: equal,
+	percentage: percentage,
+	decimal: decimal,
+);
+
+@each $spot, $digit in $keys-area-grid {
+	#key#{$digit} {
+		grid-area: $spot;
+	}
+}
+@each $operator, $value in $operators-grid-area {
+	##{$operator} {
+		grid-area: $value;
+	}
+}
+
 .container-dada {
 	height: 100vh;
 	display: grid;
@@ -83,66 +120,6 @@ body {
 				font-family: "Courier Prime";
 				text-align: center;
 				border-radius: 0.5em;
-			}
-			#key1 {
-				grid-area: one;
-			}
-			#key2 {
-				grid-area: two;
-			}
-			#key3 {
-				grid-area: three;
-			}
-			#key4 {
-				grid-area: four;
-			}
-			#key5 {
-				grid-area: five;
-			}
-			#key6 {
-				grid-area: six;
-			}
-			#key7 {
-				grid-area: seven;
-			}
-			#key8 {
-				grid-area: eight;
-			}
-			#key9 {
-				grid-area: nine;
-			}
-			#key0 {
-				grid-area: zero;
-			}
-			#decimal {
-				grid-area: decimal;
-			}
-			#clear {
-				grid-area: clear;
-			}
-			#parenthesisOpen {
-				grid-area: parenthesisOpen;
-			}
-			#parenthesisClose {
-				grid-area: parenthesisClose;
-			}
-			#times {
-				grid-area: times;
-			}
-			#divide {
-				grid-area: divide;
-			}
-			#minus {
-				grid-area: minus;
-			}
-			#plus {
-				grid-area: plus;
-			}
-			#equal {
-				grid-area: equal;
-			}
-			#percentage {
-				grid-area: percentage;
 			}
 		}
 	}
